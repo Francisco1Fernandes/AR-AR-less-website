@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <!--  <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <!-- we import arjs version without NFT but with marker + location based support -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="index.css">
+   
+    <style>
+        /* Create three unequal columns that floats next to each other */
+        .column {
+            float: left;
+            height: 100vh;
+        }
+
+
+
+        .middle {
+            width: 50%;
+        }
+
+        #arjs-cell {
+            height: 50%;
+            margin-top: 10%;
+        }
+
+        a-scene {
+            z-index: 20;
+        }
+
+
+    </style>
+
+    <script>
+        // window.addEventListener("arjs-video-loaded", evt => {
+        //     console.log("VIDEO LOADED")
+        //     const video = evt.detail.component;
+        //     const cell = document.querySelector("#arjs-cell")
+        //     THREEx.setWrapperElement(cell, video)
+        // })
+    </script>
+
+</head>
+
+<body style="margin : 0px; overflow: hidden;">
+     <div style='position: fixed; top: 10px; width:100%; z-index: 1; '>
+        <button >
+             <img style="width: 300px;" src="round2.png" alt="">
+        </button>
+    </div> 
+    <div class="column left">
+        <div  style='position: fixed; bottom: 10px; width:100%; text-align: center; z-index: 1;' id="myButton">
+
+            <a href="first scene AR-less.html"> <button class="b1" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: large; color: aliceblue;">
+            CLICK ON THE SCREEN TO MOVE ON!
+            </button></a>
+    </div>
+ 
+    </div>
+
+    <a href="AR3.html"><div class="column middle">
+        <div id="arjs-cell">
+            <a-scene mbedded vr-mode-ui="enabled: false;"
+                arjs="debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 4x4_BCH_13_9_3;">
+                <a-assets>
+                    <a-asset-item id="tree" src="models/tree.gltf"></a-asset-item>
+                </a-assets>
+
+                <!-- marker id=0 -->
+                <a-marker type="barcode" value="0">
+                    <a-image src="avisa2.png" position="0 0 0" scale="2 2.5 2" rotation="90 0 180"></a-image>
+                </a-marker>
+
+                <!-- marker id=1 -->
+                <a-marker type="barcode" value="1">
+                    <a-image src="bola2.png" position="0 0 0" scale="2 2.5 2" rotation="90 0 180"></a-image>
+                </a-marker>
+
+                <!-- marker id=2 -->
+                <a-marker type="barcode" value="2">
+                    <a-image src="marco2.png" position="0 0 0" scale="2 2.5 2" rotation="90 0 180"></a-image>
+                </a-marker>
+
+                <!-- marker id=3 -->
+                <a-marker type="barcode" value="3">
+                    <a-image src="mice2.png" position="0 0 0" scale="2 2.5 2" rotation="90 0 180"></a-image>
+                </a-marker>
+
+                
+            
+
+                <a-entity camera></a-entity>
+            </a-scene>
+        </div>
+    </div>
+    <div class="column right"></div>
+</a>
+
+
+
+    <script>
+        // show-code button
+        // setCodeBtnUrl("arjs/resized/arjs_scene.html");
+    </script>
+</body>
+
+</html>
